@@ -1,10 +1,6 @@
 # Akamai BMP Generator
 ### Generate sensor data for Akamai's Bot Management Protocol (BMP) to bypass bot detection.
-#### a cleaned up version of a Akamai bmp generator. This is not my work, I just cleaned it up and made it easier to use. If you are the original author please contact me so I can give you credit.
-
-**Original Author:** Unknown (grimoire)?  
-**Contact:** [Contact to claim ownership](mailto:muraka01@proton.me)
-
+#### a improved and cleaned up version of an akamai bmp generator
 ![Akamai BMP Generator Image](https://i.imgur.com/FnC4D3O.png)
 
 The Akamai BMP Generator is a fully reversed implementation of Akamai's BMP (Bot Management Protocol). This tool is designed for educational and research purposes, providing insights into various versions of Akamai BMP.
