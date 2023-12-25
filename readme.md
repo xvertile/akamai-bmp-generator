@@ -1,5 +1,6 @@
 # Akamai BMP Generator
-#### a cleaned up version of a akaami bmp generator. This is not my work, I just cleaned it up and made it easier to use. If you are the original author please contact me so I can give you credit.
+### Generate sensor data for Akamai's Bot Management Protocol (BMP) to bypass bot detection.
+#### a cleaned up version of a Akamai bmp generator. This is not my work, I just cleaned it up and made it easier to use. If you are the original author please contact me so I can give you credit.
 
 **Original Author:** Unknown (grimoire)?  
 **Contact:** [Contact to claim ownership](mailto:muraka01@proton.me)
