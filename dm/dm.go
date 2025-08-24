@@ -74,3 +74,7 @@ func readLines(path string) ([]string, error) {
 	}
 	return lines, scanner.Err()
 }
+
+func (dm *DeviceManager) RandomAndroidDevice() Device {
+	return dm.GetRandomDevice()
+}
