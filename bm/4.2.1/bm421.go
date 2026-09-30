@@ -527,6 +527,17 @@ func MTVerification(mt *MersenneTwister) string {
 	return fmt.Sprintf("%d,%d,%d,%d", s(val1), s(val2), s(val3), s(val4))
 }
 
+// PortSignal mirrors HAGhUs.getSensorData() when the monitored ports are
+// closed: one random seed drives all four XOR-linked values.
+func PortSignal() string {
+	seed := mrand.Intn(1000) + 1
+	a := seed * 7
+	b := seed*8 ^ a
+	c := seed*9 ^ b
+	d := seed*5 ^ c
+	return fmt.Sprintf("%d,%d,%d,%d", a, b, c, d)
+}
+
 func EncryptPayload(ctx *CryptoContext, plaintext string) (string, string) {
 	pt := []byte(plaintext)
 	padLen := aes.BlockSize - len(pt)%aes.BlockSize
@@ -780,6 +791,7 @@ func BuildSensorPairs(d DeviceProfile, pkg, appVer string, appCode int, serverUR
 
 	fp := buildDeviceFP(d, pkg)
 	appIdentity := fmt.Sprintf(",%s,%s %d,0,%d,%d", d.AppSignatureSHA1, appVer, appCode, initTS, nowMS)
+	portSignal := PortSignal()
 
 	return [][]string{
 		{"", SDKVersion},
@@ -808,6 +820,8 @@ func BuildSensorPairs(d DeviceProfile, pkg, appVer string, appCode int, serverUR
 		{"-166", buildAndroidInfo(d)},
 		{"-171", serverURL},
 		{"-240", "0"},
+		{"-172", portSignal},
+		{"-180", "-1"},
 	}
 }
 
